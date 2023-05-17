@@ -16,7 +16,7 @@ from convert_ckpt import add_additional_channels
 import math
 from torch.nn.parallel import DistributedDataParallel as DDP
 from tqdm import tqdm
-from distributed import get_rank, synchronize, get_world_size
+from distributed_local import get_rank, synchronize, get_world_size
 from transformers import get_cosine_schedule_with_warmup, get_constant_schedule_with_warmup
 from copy import deepcopy
 from inpaint_mask_func import draw_masks_from_boxes
