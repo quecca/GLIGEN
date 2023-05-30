@@ -401,7 +401,7 @@ class UNetModel(nn.Module):
         if self.first_conv_restorable:
             device = self.input_blocks[0][0].weight.device
 
-            SD_weights = th.load("../../SD_input_conv_weight_bias.pth")
+            SD_weights = th.load("/app/GLIGEN/SD_input_conv_weight_bias.pth")
             self.GLIGEN_first_conv_state_dict = deepcopy(self.input_blocks[0][0].state_dict())
 
             self.input_blocks[0][0] = conv_nd(2, 4, 320, 3, padding=1)
